@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+
 import MarketingApp from './components/marketingApp';
+import Header from './components/Header';
 
 export default() =>{
   return (
+    <BrowserRouter>
     <div>
-      <h1>hola mundo aws workflow</h1>
-      <hr/>
+      <Header/>
       <MarketingApp/>
     </div>
+    </BrowserRouter>
   );
 };
