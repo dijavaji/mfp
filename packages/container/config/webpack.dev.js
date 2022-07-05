@@ -6,6 +6,7 @@ const packageJson = require('../package.json');
 
 const devConfig = {
   mode:'development',
+  output:{publicPath: 'http://127.0.0.1:8080/'},
   devServer: {
     port: 8080,
     historyApiFallback:{
@@ -15,6 +16,7 @@ const devConfig = {
   plugins: [
     new ModuleFederationPlugin({name :'container',
                             remotes : { marketing:'marketingRemote@http://127.0.0.1:8081/remoteEntry.js',
+                                        auth:'authRemote@http://127.0.0.1:8082/remoteEntry.js',
                                 },
                             shared : packageJson.dependencies,
                             }),

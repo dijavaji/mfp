@@ -16,7 +16,7 @@ function Copyright() {
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <MaterialLink component={Link} to="/" color="inherit">
-        Your Website
+        technoloqie.com.ec
       </MaterialLink>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -156,7 +156,7 @@ export default function Album() {
           color="textSecondary"
           component="p"
         >
-          Something here to give the footer a purpose!
+          Technoloqie Asesoramiento Inform&#225;tico. All rights reserved
         </Typography>
         <Copyright />
       </footer>

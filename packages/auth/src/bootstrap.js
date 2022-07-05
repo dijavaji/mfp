@@ -5,8 +5,8 @@ import App from './App';
 
 
 //funcion mount para iniciar la aplicacion
-const mount = (el, { onNavigate, defaultHistory }) =>{
-  const history = defaultHistory || createMemoryHistory();
+const mount = (el, { onNavigate, defaultHistory, initialPath }) =>{
+  const history = defaultHistory || createMemoryHistory({initialEntries: [initialPath], });
   //en la llamada a la aplicacion creo un objeto history cada vez que cambia la url
   if(onNavigate){
       history.listen(onNavigate);
@@ -33,7 +33,7 @@ const mount = (el, { onNavigate, defaultHistory }) =>{
 if(process.env.NODE_ENV === 'development'){
   const devRoot = document.querySelector('#_auth-dev-root');
   if(devRoot){
-    mount(devRoot, {defaultHistory: createBrowserHistory()});
+    mount(devRoot, { defaultHistory: createBrowserHistory() });
   }
 }
 
