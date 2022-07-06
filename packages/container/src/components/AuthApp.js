@@ -17,7 +17,11 @@ export default () => {
       if(pathname !== nextPathname ){
           history.push(nextPathname);
       }
-    }, });
+    },
+    //agrego metodo usuario logueado
+    onSignIn: ()=>{console.log('usuario logueado');},
+
+    });
     history.listen(onParentNavigate);
   },[]);
   return <div ref={ref}/>

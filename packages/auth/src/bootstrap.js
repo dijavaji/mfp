@@ -5,7 +5,7 @@ import App from './App';
 
 
 //funcion mount para iniciar la aplicacion
-const mount = (el, { onNavigate, defaultHistory, initialPath }) =>{
+const mount = (el, {onSignIn, onNavigate, defaultHistory, initialPath }) =>{
   const history = defaultHistory || createMemoryHistory({initialEntries: [initialPath], });
   //en la llamada a la aplicacion creo un objeto history cada vez que cambia la url
   if(onNavigate){
@@ -13,7 +13,7 @@ const mount = (el, { onNavigate, defaultHistory, initialPath }) =>{
   }
 
     ReactDOM.render(
-      <App history={history} />, el
+      <App history={history} onSignIn={onSignIn} />, el
     );
 
     //comunica informacion al container padre
