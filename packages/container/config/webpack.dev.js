@@ -17,6 +17,7 @@ const devConfig = {
     new ModuleFederationPlugin({name :'container',
                             remotes : { marketing:'marketingRemote@http://127.0.0.1:8081/remoteEntry.js',
                                         auth:'authRemote@http://127.0.0.1:8082/remoteEntry.js',
+                                        dashboard:'dashboardRemote@http://127.0.0.1:8083/remoteEntry.js',
                                 },
                             shared : packageJson.dependencies,
                             }),
